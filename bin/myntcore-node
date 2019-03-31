@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var myntcore = require('../lib/cli/myntcore');
+myntcore();
