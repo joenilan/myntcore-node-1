@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "async": "^2.5.0",
-    "myntd-rpc": "^1.0.0",
+    "myntd-rpc": "joenilan/myntd-rpc",
     "myntcore-lib": "^1.0.0",
     "body-parser": "^1.18.3",
     "colors": "^1.1.2",
