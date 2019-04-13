@@ -1,6 +1,6 @@
 # Mynt Service
 
-The Mynt Service is a Node.js interface to [MMyntin](https://github.com/myntproject/mynt) for querying information about the mynt block chain. It will manage starting and stopping `myntd` or connect to several running `myntd` processes. It uses a branch of a [branch of MyMyntn](https://github.com/silence48/mynt/tree/0.15.0-myntcore/) with additional indexes for querying information about addresses and blocks. Results are cached for performance and there are several additional API methods added for common queries.
+The Mynt Service is a Node.js interface to [Mynt](https://github.com/myntproject/mynt) for querying information about the mynt block chain. It will manage starting and stopping `myntd` or connect to several running `myntd` processes. It uses a branch of a [branch of MyMyntn](https://github.com/silence48/mynt/tree/0.15.0-myntcore/) with additional indexes for querying information about addresses and blocks. Results are cached for performance and there are several additional API methods added for common queries.
 
 ## Configuration
 

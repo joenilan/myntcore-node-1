@@ -1,7 +1,7 @@
 Myntcore Node
 ============
 
-A Mynt full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [MMyntin with additional indexing](https://github.com/silence48/mynt/tree/0.15.0-myntcore) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
+A Mynt full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [Mynt with additional indexing](https://github.com/silence48/mynt/tree/0.15.0-myntcore) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
 
 ## Install
 
@@ -10,7 +10,7 @@ npm install -g myntcore-node
 myntcore-node start
 ```
 
-Note: For your convenience, we distribute myntd binaries for x86_64 Linux and x86_64 Mac OS X. Upon npm install, the binaries for your platform will be downloaded. For more detailed installation instructions, or if you want to compile the project yourself, then please see the Myntcore branch of [MMyntin with additional indexing](https://github.com/silence48/mynt/tree/0.15.0-myntcore).
+Note: For your convenience, we distribute myntd binaries for x86_64 Linux and x86_64 Mac OS X. Upon npm install, the binaries for your platform will be downloaded. For more detailed installation instructions, or if you want to compile the project yourself, then please see the Myntcore branch of [Mynt with additional indexing](https://github.com/silence48/mynt/tree/0.15.0-myntcore).
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ Note: For your convenience, we distribute myntd binaries for x86_64 Linux and x8
 
 ## Configuration
 
-Myntcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your MMyntre Node.
+Myntcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your Mynt Node.
 
 ```bash
 myntcore-node create -d <mynt-data-dir> mynode
@@ -45,7 +45,7 @@ There are several add-on services available to extend the functionality of Myntc
 
 - [Upgrade Notes](docs/upgrade.md)
 - [Services](docs/services.md)
-  - [Mynt](docs/services/myntd.md) - Interface to MMyntin Core
+  - [Mynt](docs/services/myntd.md) - Interface to Mynt Core
   - [Web](docs/services/web.md) - Creates an express application over which services can expose their web/API content
 - [Development Environment](docs/development.md) - Guide for setting up a development environment
 - [Node](docs/node.md) - Details on the node constructor

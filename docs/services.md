@@ -37,7 +37,7 @@ If, instead, you would like to run a custom node, you can include services by in
 var myntcore = require('myntcore-node');
 
 //Services
-var Mynt = myntcore.services.MMyntin;
+var Mynt = myntcore.services.Mynt;
 var Web = myntcore.services.Web;
 
 var myNode = new myntcore.Node({

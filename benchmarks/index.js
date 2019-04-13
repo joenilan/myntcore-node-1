@@ -5,7 +5,7 @@ var mynt = require('mynt');
 var async = require('async');
 var maxTime = 20;
 
-console.log('Mynt Service native interface vs. MMyntin JSON RPC interface');
+console.log('Mynt Service native interface vs. Mynt JSON RPC interface');
 console.log('----------------------------------------------------------------------');
 
 // To run the benchmarks a fully synced Mynt directory is needed. The RPC comands

@@ -14,7 +14,7 @@ var index = require('..');
 var log = index.log;
 log.debug = function() {};
 var MyntcoreNode = index.Node;
-var MyntService = index.services.MMyntin;
+var MyntService = index.services.Mynt;
 
 describe('Mynt Cluster', function() {
   var node;

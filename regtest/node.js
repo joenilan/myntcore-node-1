@@ -19,7 +19,7 @@ var MyntRPC = require('myntd-rpc');
 var index = require('..');
 var Transaction = myntcore.Transaction;
 var MyntcoreNode = index.Node;
-var MyntService = index.services.MMyntin;
+var MyntService = index.services.Mynt;
 var testWIF = 'cSdkPxkAjA4HDr5VHgsebAPDEh9Gyub4HK8UJr2DFGGqKKy4K5sG';
 var testKey;
 var client;
