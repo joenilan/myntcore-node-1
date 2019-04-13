@@ -4,7 +4,7 @@ var path = require('path');
 var async = require('async');
 var spawn = require('child_process').spawn;
 
-var MyntcoinRPC = require('myntd-rpc');
+var MyntRPC = require('myntd-rpc');
 var rimraf = require('rimraf');
 var myntcore = require('myntcore-lib');
 var chai = require('chai');
@@ -13,10 +13,10 @@ var should = chai.should();
 var index = require('..');
 var log = index.log;
 log.debug = function() {};
-var MyntoreNode = index.Node;
-var MyntoinService = index.services.MMyntin;
+var MyntcoreNode = index.Node;
+var MyntService = index.services.MMyntin;
 
-describe('Myntoin Cluster', function() {
+describe('Mynt Cluster', function() {
   var node;
   var daemons = [];
   var execPath = path.resolve(__dirname, '../bin/myntd');
@@ -24,7 +24,7 @@ describe('Myntoin Cluster', function() {
     {
       datadir: path.resolve(__dirname, './data/node1'),
       conf: path.resolve(__dirname, './data/node1/mynt.conf'),
-      rpcuser: 'myntcoin',
+      rpcuser: 'mynt',
       rpcpassword: 'local321',
       rpcport: 30521,
       zmqpubrawtx: 'tcp://127.0.0.1:30611',
@@ -33,7 +33,7 @@ describe('Myntoin Cluster', function() {
     {
       datadir: path.resolve(__dirname, './data/node2'),
       conf: path.resolve(__dirname, './data/node2/mynt.conf'),
-      rpcuser: 'myntcoin',
+      rpcuser: 'mynt',
       rpcpassword: 'local321',
       rpcport: 30522,
       zmqpubrawtx: 'tcp://127.0.0.1:30622',
@@ -42,7 +42,7 @@ describe('Myntoin Cluster', function() {
     {
       datadir: path.resolve(__dirname, './data/node3'),
       conf: path.resolve(__dirname, './data/node3/mynt.conf'),
-      rpcuser: 'myntcoin',
+      rpcuser: 'mynt',
       rpcpassword: 'local321',
       rpcport: 30523,
       zmqpubrawtx: 'tcp://127.0.0.1:30633',
@@ -67,7 +67,7 @@ describe('Myntoin Cluster', function() {
 
         var process = spawn(execPath, opts, {stdio: 'inherit'});
 
-        var client = new MyntoinRPC({
+        var client = new MyntRPC({
           protocol: 'http',
           host: '127.0.0.1',
           port: nodeConf.rpcport,
@@ -103,27 +103,27 @@ describe('Myntoin Cluster', function() {
       services: [
         {
           name: 'myntd',
-          module: MyntoinService,
+          module: MyntService,
           config: {
             connect: [
               {
                 rpchost: '127.0.0.1',
                 rpcport: 30521,
-                rpcuser: 'myntcoin',
+                rpcuser: 'mynt',
                 rpcpassword: 'local321',
                 zmqpubrawtx: 'tcp://127.0.0.1:30611'
               },
               {
                 rpchost: '127.0.0.1',
                 rpcport: 30522,
-                rpcuser: 'myntcoin',
+                rpcuser: 'mynt',
                 rpcpassword: 'local321',
                 zmqpubrawtx: 'tcp://127.0.0.1:30622'
               },
               {
                 rpchost: '127.0.0.1',
                 rpcport: 30523,
-                rpcuser: 'myntcoin',
+                rpcuser: 'mynt',
                 rpcpassword: 'local321',
                 zmqpubrawtx: 'tcp://127.0.0.1:30633'
               }
@@ -136,7 +136,7 @@ describe('Myntoin Cluster', function() {
     var regtest = myntcore.Networks.get('regtest');
     should.exist(regtest);
 
-    node = new MyntoreNode(configuration);
+    node = new MyntcoreNode(configuration);
 
     node.on('error', function(err) {
       log.error(err);

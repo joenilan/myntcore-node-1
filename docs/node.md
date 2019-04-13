@@ -15,7 +15,7 @@ A node represents a collection of services that are loaded together. For more in
 ```js
 
 var index = require('myntcore-node');
-var Myntcoin = index.services.Myntcoin;
+var Mynt = index.services.Mynt;
 var Node = index.Node;
 
 var configuration = {
@@ -24,7 +24,7 @@ var configuration = {
   services: [
     {
       name: 'myntd',
-      module: Myntoin,
+      module: Mynt,
       config: {}
     }
   ]
@@ -37,7 +37,7 @@ node.start(function() {
 });
 
 node.on('ready', function() {
-  console.log('Myntoin Node Ready');
+  console.log('Mynt Node Ready');
 });
 
 node.on('error', function(err) {

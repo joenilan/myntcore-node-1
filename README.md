@@ -1,7 +1,7 @@
 Myntcore Node
 ============
 
-A Myntoin full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [MMyntin with additional indexing](https://github.com/silence48/myntcoin/tree/0.15.0-myntcore) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
+A Mynt full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [MMyntin with additional indexing](https://github.com/silence48/mynt/tree/0.15.0-myntcore) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
 
 ## Install
 
@@ -10,7 +10,7 @@ npm install -g myntcore-node
 myntcore-node start
 ```
 
-Note: For your convenience, we distribute myntd binaries for x86_64 Linux and x86_64 Mac OS X. Upon npm install, the binaries for your platform will be downloaded. For more detailed installation instructions, or if you want to compile the project yourself, then please see the Myntore branch of [MMyntin with additional indexing](https://github.com/silence48/myntcoin/tree/0.15.0-myntcore).
+Note: For your convenience, we distribute myntd binaries for x86_64 Linux and x86_64 Mac OS X. Upon npm install, the binaries for your platform will be downloaded. For more detailed installation instructions, or if you want to compile the project yourself, then please see the Myntcore branch of [MMyntin with additional indexing](https://github.com/silence48/mynt/tree/0.15.0-myntcore).
 
 ## Prerequisites
 
@@ -22,10 +22,10 @@ Note: For your convenience, we distribute myntd binaries for x86_64 Linux and x8
 
 ## Configuration
 
-Myntore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your MMyntre Node.
+Myntcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your MMyntre Node.
 
 ```bash
-myntcore-node create -d <myntcoin-data-dir> mynode
+myntcore-node create -d <mynt-data-dir> mynode
 cd mynode
 myntcore-node install <service>
 myntcore-node install https://github.com/yourname/helloworld
@@ -35,11 +35,11 @@ This will create a directory with configuration files for your node and install 
 
 ## Add-on Services
 
-There are several add-on services available to extend the functionality of Myntore:
+There are several add-on services available to extend the functionality of Myntcore:
 
 - [Insight API](https://github.com/silence48/insight-api-mynt)
 - [Insight UI](https://github.com/silence48/insight-ui-mynt)
-- [Myntore Wallet Service](https://github.com/silence48/myntcore-wallet-service)
+- [Myntcore Wallet Service](https://github.com/silence48/myntcore-wallet-service)
 
 ## Documentation
 

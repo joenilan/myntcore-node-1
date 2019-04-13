@@ -1,17 +1,17 @@
-# Myntcoin Service
+# Mynt Service
 
-The Myntoin Service is a Node.js interface to [MMyntin](https://github.com/myntproject/myntcoin) for querying information about the myntcoin block chain. It will manage starting and stopping `myntd` or connect to several running `myntd` processes. It uses a branch of a [branch of MyMyntn](https://github.com/silence48/myntcoin/tree/0.15.0-myntcore/) with additional indexes for querying information about addresses and blocks. Results are cached for performance and there are several additional API methods added for common queries.
+The Mynt Service is a Node.js interface to [MMyntin](https://github.com/myntproject/mynt) for querying information about the mynt block chain. It will manage starting and stopping `myntd` or connect to several running `myntd` processes. It uses a branch of a [branch of MyMyntn](https://github.com/silence48/mynt/tree/0.15.0-myntcore/) with additional indexes for querying information about addresses and blocks. Results are cached for performance and there are several additional API methods added for common queries.
 
 ## Configuration
 
-The default configuration will include a "spawn" configuration in "myntd". This defines the location of the block chain database and the location of the `myntd` daemon executable. The below configuration points to a local clone of `myntcoin`, and will start `myntd` automatically with your Node.js application.
+The default configuration will include a "spawn" configuration in "myntd". This defines the location of the block chain database and the location of the `myntd` daemon executable. The below configuration points to a local clone of `mynt`, and will start `myntd` automatically with your Node.js application.
 
 ```json
   "servicesConfig": {
     "myntd": {
       "spawn": {
         "datadir": "/home/myntcore/.mynt",
-        "exec": "/home/myntcore/myntcoin/src/myntd"
+        "exec": "/home/myntcore/mynt/src/myntd"
       }
     }
   }
@@ -26,21 +26,21 @@ It's also possible to connect to separately managed `myntd` processes with round
         {
           "rpchost": "127.0.0.1",
           "rpcport": 30521,
-          "rpcuser": "myntcoin",
+          "rpcuser": "mynt",
           "rpcpassword": "local321",
           "zmqpubrawtx": "tcp://127.0.0.1:30611"
         },
         {
           "rpchost": "127.0.0.1",
           "rpcport": 30522,
-          "rpcuser": "myntcoin",
+          "rpcuser": "mynt",
           "rpcpassword": "local321",
           "zmqpubrawtx": "tcp://127.0.0.1:30622"
         },
         {
           "rpchost": "127.0.0.1",
           "rpcport": 30523,
-          "rpcuser": "myntcoin",
+          "rpcuser": "mynt",
           "rpcpassword": "local321",
           "zmqpubrawtx": "tcp://127.0.0.1:30633"
         }
@@ -110,7 +110,7 @@ node.services.myntd.generateBlock(numberOfBlocks, function(err, blockHashes) {
 
 **Getting Block Information**
 
-It's possible to query blocks by both block hash and by height. Blocks are given as Node.js Buffers and can be parsed via Myntore:
+It's possible to query blocks by both block hash and by height. Blocks are given as Node.js Buffers and can be parsed via Myntcore:
 
 ```js
 var blockHeight = 0;
@@ -217,7 +217,7 @@ node.services.myntd.getAddressBalance(address, options, function(err, balance) {
 
 This method will give history of an address limited by a range of block heights by using the "start" and "end" arguments. The "start" value is the more recent, and greater, block height. The "end" value is the older, and lesser, block height. This feature is most useful for synchronization as previous history can be omitted. Furthermore for large ranges of block heights, results can be paginated by using the "from" and "to" arguments.
 
-If "queryMempool" is set as true (it is true by default), it will show unconfirmed transactions from the myntcoin mempool. However, if you specify "start" and "end", "queryMempool" is ignored and is always false.
+If "queryMempool" is set as true (it is true by default), it will show unconfirmed transactions from the mynt mempool. However, if you specify "start" and "end", "queryMempool" is ignored and is always false.
 
 If "queryMempoolOnly" is set as true (it is false by default), it will show *only* unconfirmed transactions from mempool.
 
@@ -290,7 +290,7 @@ The `summary` will have the format (values are in satoshis):
 
 
 ## Events
-The Myntoin Service exposes two events via the Bus, and there are a few events that can be directly registered:
+The Mynt Service exposes two events via the Bus, and there are a few events that can be directly registered:
 
 ```js
 node.services.myntd.on('tip', function(blockHash) {

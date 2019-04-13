@@ -1,14 +1,14 @@
 Myntcore'use strict';
 
 var benchmark = require('benchmark');
-var myntcoin = require('myntcoin');
+var mynt = require('mynt');
 var async = require('async');
 var maxTime = 20;
 
-console.log('Myntoin Service native interface vs. MMyntin JSON RPC interface');
+console.log('Mynt Service native interface vs. MMyntin JSON RPC interface');
 console.log('----------------------------------------------------------------------');
 
-// To run the benchmarks a fully synced Myntoin directory is needed. The RPC comands
+// To run the benchmarks a fully synced Mynt directory is needed. The RPC comands
 // can be modified to match the settings in mynt.conf.
 
 var fixtureData = {
@@ -26,7 +26,7 @@ var fixtureData = {
   ]
 };
 
-var myntd = require('../').services.Myntoin({
+var myntd = require('../').services.Mynt({
   node: {
     datadir: process.env.HOME + '/.mynt',
     network: {
@@ -43,14 +43,14 @@ myntd.start(function(err) {
   if (err) {
     throw err;
   }
-  console.log('Myntoin started');
+  console.log('Mynt started');
 });
 
 myntd.on('ready', function() {
 
-  console.log('Myntoin ready');
+  console.log('Mynt ready');
 
-  var client = new myntcoin.Client({
+  var client = new mynt.Client({
     host: 'localhost',
     port: 18332,
     user: 'mynt',

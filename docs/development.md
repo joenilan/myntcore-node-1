@@ -18,14 +18,14 @@ git clone git@github.com:<yourusername>/myntcore-node.git
 git clone git@github.com:<yourusername>/myntcore-lib.git
 ```
 
-To develop myntcoin or to compile from source:
+To develop mynt or to compile from source:
 
 ```bash
-git clone git@github.com:<yourusername>/myntcoin.git
+git clone git@github.com:<yourusername>/mynt.git
 git fetch origin <branchname>:<branchname>
 git checkout <branchname>
 ```
-**Note**: See myntcoin documentation for building myntcoin on your platform.
+**Note**: See mynt documentation for building mynt on your platform.
 
 
 ## Install Development Dependencies
@@ -51,7 +51,7 @@ npm install
 cd ../myntcore-node
 npm install
 ```
-**Note**: If you get a message about not being able to download myntcoin distribution, you'll need to compile myntd from source, and setup your configuration to use that version.
+**Note**: If you get a message about not being able to download mynt distribution, you'll need to compile myntd from source, and setup your configuration to use that version.
 
 
 We now will setup symlinks in `myntcore-node` *(repeat this for any other modules you're planning on developing)*:
@@ -63,10 +63,10 @@ rm -rf myntd-rpc
 ln -s ~/myntd-rpc
 ```
 
-And if you're compiling or developing myntcoin:
+And if you're compiling or developing mynt:
 ```bash
 cd ../bin
-ln -sf ~/myntcoin/src/myntd
+ln -sf ~/mynt/src/myntd
 ```
 
 ## Run Tests
@@ -122,7 +122,7 @@ Edit `myntcore-node.json` with something similar to:
     "myntd": {
       "spawn": {
         "datadir": "/home/<youruser>/.myntd",
-        "exec": "/home/<youruser>/myntcoin/src/myntd"
+        "exec": "/home/<youruser>/mynt/src/myntd"
       }
     }
   }
@@ -152,7 +152,7 @@ spentindex=1
 zmqpubrawtx=tcp://127.0.0.1:28332
 zmqpubhashblock=tcp://127.0.0.1:28332
 rpcallowip=127.0.0.1
-rpcuser=myntcoin
+rpcuser=mynt
 rpcpassword=local321
 ```
 

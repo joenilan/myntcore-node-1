@@ -15,11 +15,11 @@ var node;
 
 var should = chai.should();
 
-var MyntcoinRPC = require('myntd-rpc');
+var MyntRPC = require('myntd-rpc');
 var index = require('..');
 var Transaction = myntcore.Transaction;
-var MyntoreNode = index.Node;
-var MyntoinService = index.services.MMyntin;
+var MyntcoreNode = index.Node;
+var MyntService = index.services.MMyntin;
 var testWIF = 'cSdkPxkAjA4HDr5VHgsebAPDEh9Gyub4HK8UJr2DFGGqKKy4K5sG';
 var testKey;
 var client;
@@ -49,7 +49,7 @@ describe('Node Functionality', function() {
         services: [
           {
             name: 'myntd',
-            module: MyntoinService,
+            module: MyntService,
             config: {
               spawn: {
                 datadir: datadir,
@@ -60,7 +60,7 @@ describe('Node Functionality', function() {
         ]
       };
 
-      node = new MyntoreNode(configuration);
+      node = new MyntcoreNode(configuration);
 
       regtest = myntcore.Networks.get('regtest');
       should.exist(regtest);
@@ -74,11 +74,11 @@ describe('Node Functionality', function() {
           return done(err);
         }
 
-        client = new MyntoinRPC({
+        client = new MyntRPC({
           protocol: 'http',
           host: '127.0.0.1',
           port: 30331,
-          user: 'myntcoin',
+          user: 'mynt',
           pass: 'local321',
           rejectUnauthorized: false
         });

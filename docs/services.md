@@ -37,7 +37,7 @@ If, instead, you would like to run a custom node, you can include services by in
 var myntcore = require('myntcore-node');
 
 //Services
-var Myntoin = myntcore.services.MMyntin;
+var Mynt = myntcore.services.MMyntin;
 var Web = myntcore.services.Web;
 
 var myNode = new myntcore.Node({
@@ -45,7 +45,7 @@ var myNode = new myntcore.Node({
   services: [
     {
       name: 'myntd',
-      module: Myntoin,
+      module: Mynt,
       config: {
         spawn: {
           datadir: '/home/<username>/.mynt',

@@ -53,7 +53,7 @@ describe('Bus Functionality', function() {
   });
 
   it('should subscribe to testEvent', function(done) {
-    var node = new MyntoreNode({
+    var node = new MyntcoreNode({
       datadir: './',
       network: 'testnet',
       port: 8888,
@@ -77,7 +77,7 @@ describe('Bus Functionality', function() {
   });
 
   it('should unsubscribe from a testEvent', function(done) {
-    var node = new MyntoreNode({
+    var node = new MyntcoreNode({
       datadir: './',
       network: 'testnet',
       port: 8888,

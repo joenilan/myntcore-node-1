@@ -17,7 +17,7 @@ var myntd;
 var should = chai.should();
 var assert = chai.assert;
 var sinon = require('sinon');
-var MyntcoinRPC = require('myntd-rpc');
+var MyntRPC = require('myntd-rpc');
 var transactionData = [];
 var blockHashes = [];
 var utxos;
@@ -43,7 +43,7 @@ describe('Mynt Functionality', function() {
         throw err;
       }
 
-      myntd = require('../').services.Myntoin({
+      myntd = require('../').services.Mynt({
         spawn: {
           datadir: datadir,
           exec: path.resolve(__dirname, '../bin/myntd')
@@ -60,16 +60,16 @@ describe('Mynt Functionality', function() {
         log.error('error="%s"', err.message);
       });
 
-      log.info('Waiting for Myntoin Core to initialize...');
+      log.info('Waiting for Mynt Core to initialize...');
 
       myntd.start(function() {
         log.info('Mynt started');
 
-        client = new MyntoinRPC({
+        client = new MyntRPC({
           protocol: 'http',
           host: '127.0.0.1',
           port: 30331,
-          user: 'myntcoin',
+          user: 'mynt',
           pass: 'local321',
           rejectUnauthorized: false
         });
