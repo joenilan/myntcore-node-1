@@ -50,6 +50,9 @@ download_myntd() {
         if test -e "${tarball_name}"; then
             echo "Unpacking Mynt distribution"
             tar -xvzf $tarball_name
+            if test $? -eq 0; then
+                return;
+            fi
         fi
     fi
     echo "Mynt binary distribution could not be downloaded"
